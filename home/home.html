@@ -7,10 +7,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="home.css">
+    <script src="https://kit.fontawesome.com/6a4049d369.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <h1>Welcome to Men's Closet</h1>
+
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="links_div">
+            <a class="links" href="#">Books</a>
+            <a class="links" href="#">Quizzes</a>
+            <a class="links" href="#">Snippets</a>
+            <a class="links" href="#">Tools</a>
+        </div>
+        <button onclick="openNavDiv()" id="open_nav_btn"><i class="fa-solid fa-bars"></i></button>
+    </nav>
+
+
+    <div id="open_nav_div">
+        <button onclick="closeNavDiv()" id="close_nav_btn"><i class="fa-solid fa-xmark"></i></button>
+        <a class="links" href="#">Books</a>
+        <br>
+        <hr>
+        <a class="links" href="#">Quizzes</a>
+        <br>
+        <hr>
+        <a class="links" href="#">Snippets</a>
+        <br>
+        <hr>
+        <a class="links" href="#">Tools</a>
+        <br>
+    </div>
+
+
+
 
 
     <script src="home.js"></script>
