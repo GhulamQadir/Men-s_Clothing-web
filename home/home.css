@@ -27,7 +27,7 @@ a {
     text-decoration: none;
     display: inline-block;
     margin-right: 10px;
-    color: #fff;
+    color: blue;
 }
 
 
@@ -36,17 +36,23 @@ a {
 #navLinksResponsive {
     visibility: hidden;
     margin-top: 60px !important;
+    height: 0px !important;
+    overflow: hidden;
+    transition: height 4s;
 }
 
-.showResponsiveLinks {
+.hello>#navLinksResponsive {
     visibility: visible !important;
+    height: 200px !important;
+
 }
 
-.hideResponsiveLinks {
+.hi>#navLinksResponsive {
     visibility: hidden !important;
-    transition: ease-out 0.8s !important;
+    height: 0px !important;
 
 }
+
 
 
 #toggleButton {
@@ -92,4 +98,5 @@ a {
         height: 10px !important;
         transition: none;
     }
+
 }
