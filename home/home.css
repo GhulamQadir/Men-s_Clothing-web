@@ -170,5 +170,35 @@ nav {
 .mySlides {
     height: 670px !important;
     width: 100%;
+}
 
+
+@media screen and (max-width: 500px) {
+    .mySlides {
+        height: 480px !important;
+    }
+}
+
+/*        Slider Styling End */
+
+
+
+
+/*       Cards Styling */
+#cards_main_div {
+    width: 90%;
+    margin: auto;
+    background-color: aliceblue;
+    text-align: center;
+    margin-top: 70px;
+}
+
+.cards {
+    width: 33% !important;
+    display: inline-block;
+}
+
+.cards_images {
+    width: 80%;
+    height: 350px;
 }
