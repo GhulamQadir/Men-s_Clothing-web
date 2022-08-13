@@ -1,25 +1,19 @@
-let linksDiv = document.getElementById('navLinksResponsive')
-let navLinksDiv2 = document.getElementById('navLinksDiv2')
+let navDiv = document.getElementById('navDiv')
+let responsiveNavLinksDivMain = document.getElementById('responsiveNavLinksDivMain')
 
 openNavDiv = () => {
-    let a = document.getElementById('navDiv')
 
-    navLinksDiv2.className = " hello"
+    responsiveNavLinksDivMain.className = " showResponsiveNavLinksDiv"
 
-    a.className = " showNavDiv"
+    navDiv.className = " showNavDiv"
 
 
-    // linksDiv.className = " showResponsiveLinks"
 }
 
 
 closeNavDiv = () => {
-    let b = document.getElementById('navDiv')
-    b.className = " hideNavDiv"
-    navLinksDiv2.className += " hi"
-
-
-    // linksDiv.className = " hideResponsiveLinks"
+    navDiv.className = " hideNavDiv"
+    responsiveNavLinksDivMain.className += " hideResponsiveNavLinksDiv"
 
 
 }
