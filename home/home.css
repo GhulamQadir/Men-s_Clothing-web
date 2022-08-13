@@ -156,3 +156,19 @@ nav {
 }
 
 /*           Navbar Styling ENDs Here          */
+
+
+
+
+/*       Slider Styling        */
+#slider_div {
+    height: 50% !important;
+    margin-top: 83px !important;
+}
+
+
+.mySlides {
+    height: 670px !important;
+    width: 100%;
+
+}
