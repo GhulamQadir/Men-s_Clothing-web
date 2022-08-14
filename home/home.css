@@ -11,7 +11,7 @@ body {
 nav {
     background: white;
     padding: 17px 40px 5px 40px !important;
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     right: 0;
@@ -43,8 +43,7 @@ nav {
     color: rgb(19, 0, 87);
     font-family: sans-serif;
     margin-left: 50px;
-    font-size: 18px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 
@@ -188,19 +187,44 @@ nav {
 #cards_main_div {
     width: 87%;
     margin: auto;
-    background-color: aliceblue;
     text-align: center;
     margin-top: 70px;
 }
 
-.cards {
+.card {
     width: 28% !important;
     display: inline-block;
-    background-color: black;
     margin: 16px;
+    background-color: rgba(255, 255, 255, 0.5)
 }
 
-.cards_images {
+.card_image {
     width: 100%;
     height: 350px;
+    opacity: 1;
+    transition: opacity 0.6s;
+    background-color: Black;
+
+}
+
+.cardbutton {
+    visibility: hidden;
+    position: absolute;
+    margin: 140px;
+}
+
+.card:hover .card_image {
+    opacity: 0.4;
+    position: relative;
+
+}
+
+.card:hover .cardbutton {
+    visibility: visible;
+}
+
+.my {
+    visibility: hidden;
+    height: 200px;
+    position: absolute;
 }
