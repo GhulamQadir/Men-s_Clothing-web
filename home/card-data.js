@@ -14,11 +14,11 @@ let cardsData = [{
 },
 {
     name: "Card 4",
-    image: "https://cdn.shopify.com/s/files/1/0144/7827/8739/products/AY5A2616_2000x.jpg?v=1659622146"
+    image: "https://cdn.edenrobe.com/media/catalog/product/0/n/0n9a1748-emtgt21-008.jpg"
 },
 {
-    name: "Card 4",
-    image: "https://cdn.shopify.com/s/files/1/0144/7827/8739/products/AY5A2616_2000x.jpg?v=1659622146"
+    name: "Card 5",
+    image: "https://cdn.shopify.com/s/files/1/0144/7827/8739/products/AY5A2899_2000x.jpg?v=1646229908"
 }
 ]
 
