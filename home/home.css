@@ -130,7 +130,7 @@ nav {
 @media screen and (max-width: 750px) {
 
     nav {
-        padding-right: 15px !important;
+        padding: 13px 15px 0px 30px !important;
     }
 
     .nav_links_div {
@@ -139,6 +139,10 @@ nav {
 
     #toggleButton {
         display: block;
+    }
+
+    #nav_logo_heading {
+        font-size: 25px;
     }
 }
 
@@ -165,6 +169,14 @@ nav {
     height: 50% !important;
     margin-top: 68px !important;
 }
+
+@media screen and (max-width: 750px) {
+    #slider_div {
+        margin-top: 59px !important;
+    }
+
+}
+
 
 
 .mySlides {
@@ -208,7 +220,7 @@ nav {
 }
 
 
-.quickview {
+.card>.quickview {
     position: absolute;
     width: 24.4%;
     height: 350px;
@@ -218,8 +230,11 @@ nav {
     transition: opacity 0.5s;
 }
 
-.quickview_btn {
-    margin-top: 45%;
+.view_details_btn {
+    margin-top: 130px;
+    padding: 5px 7px 5px 7px;
+    background-color: white !important;
+    border: none;
 }
 
 .card:hover .quickview {
