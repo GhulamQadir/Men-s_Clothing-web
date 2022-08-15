@@ -41,7 +41,17 @@ for (let i = 0; i < cardsData.length; i++) {
 
 
 function viewDetails(e) {
-    console.log(e.parentNode.parentNode.childNodes[3].src)
-    console.log(e.parentNode.parentNode.childNodes[5].innerHTML)
-    console.log(e.parentNode.parentNode.childNodes[7].innerHTML)
+    let productDetails = e.parentNode.parentNode
+
+    let name = productDetails.childNodes[5].innerHTML
+    let price = productDetails.childNodes[7].innerHTML
+    let image = productDetails.childNodes[3].src
+
+    localStorage.setItem('productDetails', JSON.stringify({
+        "name": name,
+        "price": price,
+        "image": image
+    }))
+
+    window.location.assign('../product_details/product-details.html')
 }
