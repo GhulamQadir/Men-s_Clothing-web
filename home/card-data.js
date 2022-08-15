@@ -24,10 +24,9 @@ let cardsData = [{
 
 for (let i = 0; i < cardsData.length; i++) {
     cardsMainDiv.innerHTML += `<div class="card">
-    <button class="cardbutton">hello</button>
+    <div class="quickview"><button>quickview</button></div>
     <img class="card_image"
         src="${cardsData[i].image}">
-        <div class="my">hello</div>
     <p>${cardsData[i].name}</p>
 </div>`
 }

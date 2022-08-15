@@ -11,7 +11,8 @@ body {
 nav {
     background: white;
     padding: 17px 40px 5px 40px !important;
-    position: sticky;
+    position: fixed;
+    z-index: 99;
     top: 0;
     left: 0;
     right: 0;
@@ -195,7 +196,8 @@ nav {
     width: 28% !important;
     display: inline-block;
     margin: 16px;
-    background-color: rgba(255, 255, 255, 0.5)
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
 }
 
 .card_image {
@@ -203,28 +205,20 @@ nav {
     height: 350px;
     opacity: 1;
     transition: opacity 0.6s;
-    background-color: Black;
-
 }
 
-.cardbutton {
-    visibility: hidden;
+
+.quickview {
     position: absolute;
-    margin: 140px;
+    width: 24.4%;
+    height: 24%;
+    background-color: rgba(0, 0, 0, 0.3);
+    margin: auto;
+    opacity: 0;
+    transition: opacity 0.5s;
+    padding-top: 10%;
 }
 
-.card:hover .card_image {
-    opacity: 0.4;
-    position: relative;
-
-}
-
-.card:hover .cardbutton {
-    visibility: visible;
-}
-
-.my {
-    visibility: hidden;
-    height: 200px;
-    position: absolute;
+.card:hover .quickview {
+    opacity: 1;
 }
