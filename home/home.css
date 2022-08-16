@@ -271,6 +271,10 @@ nav {
     #cards_main_div {
         width: 96%;
     }
+
+    .card .view_details_div {
+        width: 26.9%;
+    }
 }
 
 @media screen and (max-width: 1115px) {
@@ -298,6 +302,12 @@ nav {
     transition: 0.2s;
 }
 
+.product_name {
+    font-family: sans-serif;
+    font-weight: 550;
+}
+
+
 @media screen and (max-width:670px) {
     .card {
         width: 47% !important;
@@ -312,12 +322,17 @@ nav {
         width: 47%;
         height: 300px !important;
     }
+
+    .product_name {
+        font-size: 14px;
+        font-weight: 510;
+    }
 }
 
 
 @media screen and (max-width:535px) {
     .card {
-        width: 74% !important;
+        width: 70% !important;
     }
 
     .card_image {
@@ -326,12 +341,7 @@ nav {
     }
 
     .card .view_details_div {
-        width: 74%;
+        width: 70%;
         height: 350px;
     }
-}
-
-
-.hidePrice {
-    display: none;
 }

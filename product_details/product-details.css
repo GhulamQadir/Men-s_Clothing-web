@@ -1,4 +1,15 @@
 #main_img {
     height: 450px;
-    width: 300px;
+    width: 400px;
+    display: inline-block;
+}
+
+#product_name {
+    vertical-align: top;
+}
+
+
+.other_images {
+    height: 140px;
+    width: 133px;
 }
