@@ -1,5 +1,6 @@
 let cardsMainDiv = document.getElementById('cards_main_div')
 
+
 let cardsData = [{
     name: "English Zip Polo Twinset - Black/Red",
     image: "https://cdn.shopify.com/s/files/1/0144/7827/8739/products/105A7099copy_2000x.jpg?v=1646229301",
@@ -11,7 +12,7 @@ let cardsData = [{
     price: 1700
 },
 {
-    name: "Men's White and Black Graphic Tee",
+    name: "Men's White &amp; Black Graphic Tee",
     image: "https://cdn.edenrobe.com/media/catalog/product/0/n/0n9a1748-emtgt21-008.jpg",
     price: 2000
 },
@@ -28,30 +29,30 @@ let cardsData = [{
 ]
 
 for (let i = 0; i < cardsData.length; i++) {
-    cardsMainDiv.innerHTML += `<div class="card">
+    cardsMainDiv.innerHTML += `<div onclick="viewDetails(this)" class="card">
     <div class="quickview">
-    <button onclick="viewDetails(this)" class="view_details_btn">View Details</button>
+    <button id="viewDetails_btn" class="view_details_btn">View Details</button>
     </div>
     <img class="card_image"
         src="${cardsData[i].image}">
     <p>${cardsData[i].name}</p>
-     <span class="hidden_info">${cardsData[i].price}</span>
      </div>
 </div>`
 }
 
 
 function viewDetails(e) {
-    let productDetails = e.parentNode.parentNode;
+    setTimeout(() => {
+        let name = e.childNodes[5].innerHTML
 
-    let name = productDetails.childNodes[5].innerHTML
-    let price = Number(productDetails.childNodes[7].innerHTML)
+        for (var i = 0; i < cardsData.length; i++) {
+            if (cardsData[i].name === name) {
+                localStorage.setItem('productDetails', JSON.stringify(cardsData[i]))
 
-    for (var i = 0; i < cardsData.length; i++) {
-        if (cardsData[i].name === name && cardsData[i].price === price) {
-            localStorage.setItem('productDetails', JSON.stringify(cardsData[i]))
-
-            window.location.assign('../product_details/product-details.html')
+                window.location.assign('../product_details/product-details.html')
+            }
         }
-    }
+    }, 100)
+
 }
+

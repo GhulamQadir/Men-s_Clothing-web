@@ -249,6 +249,7 @@ nav {
     color: white;
     border: none;
     font-size: 17px;
+    cursor: pointer;
 }
 
 .card:hover .quickview {
@@ -282,6 +283,7 @@ nav {
         width: 40%;
     }
 }
+
 
 @media screen and (max-width:670px) {
     .card {
@@ -320,6 +322,6 @@ nav {
 }
 
 
-.hidden_info {
+.hidePrice {
     display: none;
 }
