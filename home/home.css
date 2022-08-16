@@ -187,6 +187,10 @@ nav {
         margin-top: 59px !important;
     }
 
+    .view_details_btn {
+        display: none;
+    }
+
 }
 
 
@@ -199,7 +203,7 @@ nav {
 
 @media screen and (max-width: 500px) {
     .mySlides {
-        height: 480px !important;
+        height: 450px !important;
     }
 }
 
@@ -232,7 +236,7 @@ nav {
 }
 
 
-.card .quickview {
+.card .view_details_div {
     position: absolute;
     width: 24.4%;
     height: 350px;
@@ -252,7 +256,12 @@ nav {
     cursor: pointer;
 }
 
-.card:hover .quickview {
+.detailsBtnOnclickStyling {
+    background-color: rgba(163, 163, 163, 0.5);
+    transition: 0.15;
+}
+
+.card:hover .view_details_div {
     opacity: 1;
 }
 
@@ -265,7 +274,7 @@ nav {
 }
 
 @media screen and (max-width: 1115px) {
-    .card .quickview {
+    .card .view_details_div {
         width: 26.9%;
     }
 }
@@ -279,11 +288,15 @@ nav {
         width: 40% !important;
     }
 
-    .card .quickview {
+    .card .view_details_div {
         width: 40%;
     }
 }
 
+.cardOnclickTransition {
+    opacity: 0.5;
+    transition: 0.2s;
+}
 
 @media screen and (max-width:670px) {
     .card {
@@ -295,12 +308,9 @@ nav {
         height: 300px;
     }
 
-    .quickview {
-        height: 300px !important;
-    }
-
-    .card .quickview {
+    .card .view_details_div {
         width: 47%;
+        height: 300px !important;
     }
 }
 
@@ -315,7 +325,7 @@ nav {
         height: 300px;
     }
 
-    .card .quickview {
+    .card .view_details_div {
         width: 74%;
         height: 350px;
     }

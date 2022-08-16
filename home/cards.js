@@ -30,8 +30,8 @@ let cardsData = [{
 
 for (let i = 0; i < cardsData.length; i++) {
     cardsMainDiv.innerHTML += `<div onclick="viewDetails(this)" class="card">
-    <div class="quickview">
-    <button id="viewDetails_btn" class="view_details_btn">View Details</button>
+    <div class="view_details_div">
+    <button id="viewDetailsBtnStyling" onclick="viewDetailsBtnStyling()" class="view_details_btn">View Details</button>
     </div>
     <img class="card_image"
         src="${cardsData[i].image}">
@@ -42,6 +42,7 @@ for (let i = 0; i < cardsData.length; i++) {
 
 
 function viewDetails(e) {
+    e.className += " cardOnclickTransition"
     setTimeout(() => {
         let name = e.childNodes[5].innerHTML
 
@@ -52,7 +53,14 @@ function viewDetails(e) {
                 window.location.assign('../product_details/product-details.html')
             }
         }
-    }, 100)
+    }, 200)
 
 }
 
+
+
+function viewDetailsBtnStyling() {
+    let styleDetailsBtn = document.getElementById('viewDetailsBtnStyling')
+    styleDetailsBtn.className += " detailsBtnOnclickStyling"
+
+}
