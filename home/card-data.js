@@ -11,7 +11,7 @@ let cardsData = [{
     price: 1700
 },
 {
-    name: "Men's White & Black Graphic Tee",
+    name: "Men's White and Black Graphic Tee",
     image: "https://cdn.edenrobe.com/media/catalog/product/0/n/0n9a1748-emtgt21-008.jpg",
     price: 2000
 },
@@ -35,23 +35,23 @@ for (let i = 0; i < cardsData.length; i++) {
     <img class="card_image"
         src="${cardsData[i].image}">
     <p>${cardsData[i].name}</p>
-    <p>${cardsData[i].price}</p>
+     <span class="hidden_info">${cardsData[i].price}</span>
+     </div>
 </div>`
 }
 
 
 function viewDetails(e) {
-    let productDetails = e.parentNode.parentNode
+    let productDetails = e.parentNode.parentNode;
 
     let name = productDetails.childNodes[5].innerHTML
-    let price = productDetails.childNodes[7].innerHTML
-    let image = productDetails.childNodes[3].src
+    let price = Number(productDetails.childNodes[7].innerHTML)
 
-    localStorage.setItem('productDetails', JSON.stringify({
-        "name": name,
-        "price": price,
-        "image": image
-    }))
+    for (var i = 0; i < cardsData.length; i++) {
+        if (cardsData[i].name === name && cardsData[i].price === price) {
+            localStorage.setItem('productDetails', JSON.stringify(cardsData[i]))
 
-    window.location.assign('../product_details/product-details.html')
+            window.location.assign('../product_details/product-details.html')
+        }
+    }
 }

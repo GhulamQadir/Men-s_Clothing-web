@@ -47,11 +47,21 @@ nav {
     font-weight: 600;
 }
 
+.responsive_nav_links {
+    text-decoration: none;
+    display: inline-block;
+    color: rgb(19, 0, 87);
+    font-family: sans-serif;
+    margin-left: 50px;
+    margin-top: 5px;
+    font-weight: 600;
+}
+
 
 
 /*     Navbar opening on toggle button  (Responsive Screen) */
 .showNavDiv>nav {
-    height: 215px !important;
+    height: 227px !important;
     padding: 13px 15px 0px 30px !important;
 }
 
@@ -209,7 +219,7 @@ nav {
 .card {
     width: 28% !important;
     display: inline-block;
-    margin: 20px 6px 10px 6px;
+    margin: 20px 6px 20px 6px;
     background-color: rgba(255, 255, 255, 0.5);
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
 }
@@ -233,10 +243,12 @@ nav {
 }
 
 .view_details_btn {
-    margin-top: 130px;
-    padding: 5px 7px 5px 7px;
-    background-color: white !important;
+    margin-top: 40%;
+    padding: 7px 10px 7px 10px;
+    background-color: rgba(245, 244, 244, 0.5);
+    color: white;
     border: none;
+    font-size: 17px;
 }
 
 .card:hover .quickview {
@@ -305,4 +317,9 @@ nav {
         width: 74%;
         height: 350px;
     }
+}
+
+
+.hidden_info {
+    display: none;
 }
