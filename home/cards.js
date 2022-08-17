@@ -30,10 +30,10 @@ let cardsData = [{
     price: 1600
 },
 {
-    name: "Skull Head Sneakers",
-    image: "https://cdn.shopify.com/s/files/1/0518/0581/4952/products/1_3bd3bc81-2af9-4d90-a7b0-32e553a3cc41_590x.jpg?v=1623069035",
-    image2: "https://cdn.shopify.com/s/files/1/0518/0581/4952/products/1623066851_1_590x.png?v=1623069036",
-    image3: "https://cdn.shopify.com/s/files/1/0518/0581/4952/products/1623066851_1_590x.png?v=1623069036",
+    name: "AD black running shoes",
+    image: "https://www.flashfootwear.com.pk/wp-content/uploads/2022/08/Flash_0213_Group-215-1.jpg",
+    image2: "https://www.flashfootwear.com.pk/wp-content/uploads/2022/08/Flash_0211_Group-213-1.jpg",
+    image3: "https://www.flashfootwear.com.pk/wp-content/uploads/2022/08/Flash_0212_Group-214-1.jpg",
     price: 3500
 }
 ]

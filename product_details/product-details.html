@@ -11,20 +11,56 @@
 
 <body>
 
-    <div>
-        <div class="upperDiv"></div>
-        <img id="main_img" src="">
-        <span id="product_name"></p>
-            <p id="product_price"></p>
-    </div>
-    <div>
-        <img id="productImg1" src="" class="other_images" />
-        <img id="productImg2" src="" class="other_images" />
-        <img id="productImg3" src="" class="other_images" />
-    </div>
+    <div class="main-container">
+        <div class="upperContainer">
+            <div class="imgBox">
+                <img id="main_img" src="">
+            </div>
+            <div class="productDetailsDiv">
+                <p id="product_name"></p>
+                <p id="product_price">RS </p>
+                <ul>
+                    <li>
+                        <p class="dummy_data">Lorem Ipsum</p>
+                    </li>
+                    <li>
+                        <p class="dummy_data">Dummy text</p>
+                    </li>
+                    <li>
+                        <p class="dummy_data">Contrary to popular</p>
+                    </li>
+                </ul>
+
+                <p class="size">Size <button>S</button> <button>M</button> <button>L</button></p>
+            </div>
+        </div>
+        <div>
+            <div id="otherImagesOfProduct">
+                <a id="productImgLink1" onclick="return false" href="" target="imgBox"><img class="other_images"
+                        id="productImg1" src=""></a></li>
+                <a id="productImgLink2" onclick="return false" href="" target="imgBox"><img class="other_images"
+                        id="productImg2" src=""></a></li>
+                <a id="productImgLink3" onclick="return false" href="" target="imgBox"><img class="other_images"
+                        id="productImg3" src=""></a></li>
+                </ul>
+            </div>
+        </div>
 
 
-    <script src="product-details.js"></script>
+
+        <script src="product-details.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+        <script type="text/javascript">
+            $(document).ready(() => {
+                $('#otherImagesOfProduct a').click(function (e) {
+                    e.preventDefault();
+                    $('.imgBox img').attr("src", $(this).attr("href"))
+                })
+
+            })
+        </script>
 </body>
 
 </html>
