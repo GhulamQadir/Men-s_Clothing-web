@@ -73,7 +73,35 @@ p {
     transition: 0.25s;
 }
 
+.contact_us_btn {
+    margin: 10px;
+    padding: 8px 17px 8px 17px;
+    background-color: white;
+    transition: background-color 0.25s;
+    font-size: 16px;
+}
 
+.contact_us_btn:hover {
+    background-color: black;
+    color: white;
+}
+
+.fa-phone {
+    padding-left: 6px;
+}
+
+.five_stars_div {
+    margin: 10px;
+}
+
+.fa-star {
+    color: gold;
+}
+
+#rating_percent {
+    font-size: 14px;
+    color: grey;
+}
 
 .other_images {
     height: 140px;
