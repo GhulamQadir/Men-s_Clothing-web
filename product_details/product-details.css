@@ -103,7 +103,92 @@ p {
     color: grey;
 }
 
+#links_icons_div {
+    margin-top: 30px;
+    margin-left: 15px;
+}
+
+
+.links_icons {
+    padding: 10px;
+    border-radius: 30px;
+    margin-right: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.fa-instagram {
+    background-color: #C13584;
+    color: white;
+}
+
+.fa-twitter {
+    background-color: #1DA1F2;
+    color: white;
+}
+
+.fa-facebook-f {
+    background-color: #4267B2;
+    color: white;
+    padding: 10px 12px 10px 12px !important;
+}
+
+.fa-whatsapp {
+    background-color: #25D366;
+    color: white;
+}
+
+
+#otherImagesOfProduct {
+    margin-top: 40px;
+    display: block;
+}
+
 .other_images {
-    height: 140px;
+    height: 130px;
     width: 13.45%;
+}
+
+@media screen and (max-width:1150px) {
+    .main-container {
+        width: 90% !important;
+    }
+
+    #main_img {
+        width: 40% !important;
+    }
+
+    .productDetailsDiv {
+        width: 50% !important;
+    }
+
+}
+
+@media screen and (max-width:800px) {
+    .main-container {
+        width: 95% !important;
+    }
+
+    #main_img {
+        width: 100% !important;
+    }
+
+    .productDetailsDiv {
+        width: 95% !important;
+    }
+
+    .other_images {
+        margin-top: 20px;
+        width: 30%;
+    }
+
+    .size_heading {
+        margin: 10px 10px 10px 7px;
+    }
+
+    .size_btns {
+        margin: 0px 3px 0px 3px;
+        padding: 4px 9px 4px 9px;
+    }
 }
