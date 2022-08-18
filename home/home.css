@@ -2,6 +2,7 @@
 body {
     margin: 0px !important;
     padding: 0px !important;
+    font-family: sans-serif;
 }
 
 
@@ -22,7 +23,6 @@ nav {
 }
 
 #nav_logo_heading {
-    font-family: sans-serif;
     display: inline;
     font-size: 30px;
     color: rgb(13, 13, 54);
@@ -42,7 +42,6 @@ nav {
     text-decoration: none;
     display: inline;
     color: rgb(19, 0, 87);
-    font-family: sans-serif;
     margin-left: 50px;
     font-weight: 600;
 }
@@ -102,7 +101,6 @@ nav {
     text-decoration: none;
     display: inline;
     color: rgb(19, 0, 87);
-    font-family: sans-serif;
     margin-left: 50px;
     margin-top: 5px;
     font-weight: 600;
@@ -403,4 +401,42 @@ nav {
         width: 70%;
         height: 350px;
     }
+}
+
+
+
+/* Footer */
+.row {
+    background-color: rgb(247, 247, 247);
+    width: 100%;
+    justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.col3 {
+    width: 20%;
+    padding: 10px;
+    text-align: center;
+}
+
+.big_column {
+    width: 26%;
+    padding: 10px;
+}
+
+.divs_headings {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.divs_content {
+    margin: 6px;
+    font-size: 13px;
+}
+
+.footer_links {
+    text-decoration: none;
+    color: rgb(116, 116, 116);
 }
