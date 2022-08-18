@@ -152,6 +152,16 @@ p {
 
 
 
+@media screen and (max-width:1000px) {
+    .main-container {
+        width: 90% !important;
+    }
+
+    #main_img {
+        width: 95%;
+    }
+}
+
 @media screen and (max-width:800px) {
     .main-container {
         width: 95% !important;
@@ -184,17 +194,17 @@ p {
 .row {
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .column6 {
-    flex-basis: 50%;
-    margin: 0;
+    width: 50%;
 }
 
 @media only screen and (max-width: 600px) {
 
     .column6 {
-        flex-basis: 100%;
+        width: 100% !important;
     }
 
     .other_images {
