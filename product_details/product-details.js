@@ -34,4 +34,3 @@ productImgLink3.href = image3
 
 console.log(productDetails)
 
-
