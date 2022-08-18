@@ -40,24 +40,39 @@ nav {
 /*     Navbar's Links Styling      */
 .links {
     text-decoration: none;
-    display: inline-block;
+    display: inline;
     color: rgb(19, 0, 87);
     font-family: sans-serif;
     margin-left: 50px;
     font-weight: 600;
 }
 
-.responsive_nav_links {
-    text-decoration: none;
-    display: inline-block;
-    color: rgb(19, 0, 87);
-    font-family: sans-serif;
-    margin-left: 50px;
-    margin-top: 5px;
-    font-weight: 600;
+
+
+.nav_links_para {
+    display: inline;
+    position: relative;
+    padding-bottom: 5px;
 }
 
+.nav_links_para:after {
+    content: '';
+    position: absolute;
+    width: 70%;
+    transform: scaleX(0);
+    height: 2px;
+    margin-left: 45px;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(18, 18, 107);
+    transform-origin: bottom left;
+    transition: transform 0.25s ease-out;
+}
 
+.nav_links_para:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
 
 /*     Navbar opening on toggle button  (Responsive Screen) */
 .showNavDiv>nav {
@@ -82,6 +97,42 @@ nav {
     overflow: hidden;
     transition: height 1s;
 }
+
+.responsive_nav_links {
+    text-decoration: none;
+    display: inline;
+    color: rgb(19, 0, 87);
+    font-family: sans-serif;
+    margin-left: 50px;
+    margin-top: 5px;
+    font-weight: 600;
+}
+
+
+.responsive_nav_links_para {
+    padding-bottom: 3px;
+    position: relative;
+}
+
+.responsive_nav_links_para:after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    transform: scaleX(0);
+    height: 2px;
+    margin-left: 45px;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(18, 18, 107);
+    transform-origin: bottom left;
+    transition: transform 0.25s ease-out;
+}
+
+.responsive_nav_links_para:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
 
 .showResponsiveNavLinksDiv>#responsiveNavLinksDiv {
     visibility: visible !important;
@@ -135,6 +186,11 @@ nav {
 
     .links {
         margin-left: 30px;
+    }
+
+    .nav_links_para:after {
+        margin-left: 27px;
+        width: 76%;
     }
 }
 
