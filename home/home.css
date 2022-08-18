@@ -221,10 +221,14 @@ nav {
     }
 
     .showNavDiv>nav {
-        height: 10px !important;
+        height: 55px !important;
         transition: none;
     }
 
+    .hideNavDiv>nav {
+        height: 45px !important;
+        padding: 17px 40px 5px 40px !important;
+    }
 }
 
 /*           Navbar Styling ENDs Here          */
