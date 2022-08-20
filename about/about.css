@@ -230,3 +230,28 @@ nav {
 }
 
 /*           Navbar Styling ENDs Here          */
+
+
+
+/* About Us Image Container */
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+    margin-top: 65px;
+}
+
+#about_us_img {
+    height: 630px;
+    width: 100%;
+}
+
+#img_text {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 35px;
+    word-spacing: 10px;
+    font-weight: 550;
+}
