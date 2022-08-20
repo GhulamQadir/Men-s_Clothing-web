@@ -238,7 +238,13 @@ nav {
     position: relative;
     text-align: center;
     color: white;
-    margin-top: 65px;
+    margin-top: 68px;
+}
+
+@media screen and (max-width: 750px) {
+    .container {
+        margin-top: 59px !important;
+    }
 }
 
 #about_us_img {
