@@ -1,0 +1,22 @@
+* {
+    font-family: sans-serif;
+}
+
+.prod-img {
+    height: 150px;
+    width: 200px;
+}
+
+.prod-name {
+    font-size: 20px;
+    font-weight: 550;
+}
+
+.prod-price {
+    font-weight: 550;
+}
+
+.product {
+    margin-top: 100px;
+    border: 1px solid grey;
+}

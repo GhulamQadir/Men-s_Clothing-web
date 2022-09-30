@@ -40,7 +40,8 @@ addToCart = (e) => {
     let product = {
         name: name,
         price: price,
-        image: image
+        image: image,
+        quantity: 1
     }
 
     // cart.push(product)
