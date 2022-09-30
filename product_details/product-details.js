@@ -1,5 +1,6 @@
 let productDetails = JSON.parse(localStorage.getItem('productDetails'))
 let { name, price, image, image2, image3 } = productDetails
+var cart = []
 
 
 let productMainImg = document.getElementById('main_img')
@@ -34,3 +35,39 @@ productImgLink3.href = image3
 
 console.log(productDetails)
 
+
+addToCart = (e) => {
+    let product = {
+        name: name,
+        price: price,
+        image: image
+    }
+
+    // cart.push(product)
+    let productMatched = false
+
+    for (var i = 0; i < cart.length; i++) {
+        if (cart[i].name === product.name) {
+            productMatched = true
+        }
+    }
+
+    if (productMatched === true) {
+        alert("Already added to your cart")
+    }
+    if (productMatched === false) {
+        cart.push(product)
+        localStorage.setItem("cart", JSON.stringify(cart))
+    }
+
+}
+
+
+getCartProducts = () => {
+    let products = JSON.parse(localStorage.getItem('cart'))
+    cart = products
+    if (!cart) {
+        cart = []
+    }
+}
+getCartProducts()

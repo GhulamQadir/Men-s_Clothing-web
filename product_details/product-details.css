@@ -211,3 +211,17 @@ p {
         width: 32%;
     }
 }
+
+
+.add_to_cart_btn {
+    margin-top: 35px;
+    padding: 7px;
+    background-color: white;
+    transition: background-color 0.2s ease;
+    font-size: 20px;
+}
+
+.add_to_cart_btn:hover {
+    background-color: grey;
+    color: white;
+}
