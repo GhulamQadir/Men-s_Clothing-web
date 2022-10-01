@@ -26,3 +26,12 @@
     font-size: 24px;
     margin-left: 20px;
 }
+
+.order_btn {
+    margin: 10px;
+    padding: 10px;
+    color: white;
+    background-color: purple;
+    font-size: 17px;
+    border: none;
+}

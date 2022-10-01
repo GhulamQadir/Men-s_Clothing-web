@@ -16,6 +16,8 @@ renderProductsOnCart = () => {
         <p>Quantity: <span>${cartProducts[i].quantity}<span></p>
         <button onclick="increaseQuanity(this)" class="increase_btn">+</button>
         <button onclick="decreaseQuanity(this)" class="decrease_btn">-</button>
+        <br />
+        <a href="order-now/order.html"><button class="order_btn">Order Now</button></a>
         </div>`
     }
 }
