@@ -1,6 +1,16 @@
 .inputFields {
-    height: 24px;
-    width: 200px;
+    height: 27px;
+    width: 250px;
     margin-top: 10px;
     display: block;
+    font-size: 16px;
+}
+
+.order_now_btn {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 22px;
+    color: white;
+    background-color: purple;
+    border: none;
 }

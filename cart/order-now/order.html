@@ -15,11 +15,12 @@
     <form method="post" onsubmit="orderNow(event)">
         <input class="inputFields" id="name" type="text" placeholder="Enter your name" />
         <input class="inputFields" id="email" type="email" placeholder="Enter your email" />
+        <input class="inputFields" id="phoneNo" type="text" placeholder="Enter your phone number" maxlength="11" />
 
-        <button onclick="orderNow(event)">Order Now</button>
+        <button class="order_now_btn" onclick="orderNow(event)">Order Now</button>
     </form>
 
-    <script src="order.js"></script>
+    <script type="module" src="order.js"></script>
 </body>
 
 </html>
