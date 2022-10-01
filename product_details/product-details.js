@@ -41,7 +41,8 @@ addToCart = (e) => {
         name: name,
         price: price,
         image: image,
-        quantity: 1
+        quantity: 1,
+        subTotal: price
     }
 
     // cart.push(product)
