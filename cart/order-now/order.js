@@ -13,6 +13,34 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
 
+const pickCurrentLocation = () => {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(success, error);
+    } else {
+        console.log("Geolocation is not supported by this browser.");
+    }
+}
+
+const success = (position) => {
+    let { latitude, longitude } = position.coords
+    console.log(latitude, longitude)
+}
+
+
+const error = (error) => {
+    if (error.code === 1) {
+        console.log("your browser is not supporting")
+    }
+    if (error.code === 2) {
+        console.log("location not available")
+    }
+    else {
+        console.log("something went wrong")
+    }
+}
+
+
+
 const setOrder = () => {
     db.collection("orders").add({
         first: "Ada",
