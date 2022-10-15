@@ -7,20 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Now</title>
     <link rel="stylesheet" href="order.css" />
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
 </head>
 
 <body>
     <h1>Order Now</h1>
 
-    <form method="post" onsubmit="orderNow(event)">
-        <input class="inputFields" id="name" type="text" placeholder="Enter your name" />
-        <input class="inputFields" id="email" type="email" placeholder="Enter your email" />
-        <input class="inputFields" id="phoneNo" type="text" placeholder="Enter your phone number" maxlength="11" />
+    <!-- <form method="post"> -->
+    <input class=" inputFields" id="name" type="text" placeholder="Enter your name" />
+    <input class="inputFields" id="email" type="email" placeholder="Enter your email" />
+    <input class="inputFields" id="phoneNo" type="text" placeholder="Enter your phone number" maxlength="11" />
 
-        <button class="order_now_btn" onclick="orderNow(event)">Order Now</button>
-    </form>
+    <button class="order_now_btn" onclick="setOrder()">Order Now</button>
+    <!-- </form> -->
 
-    <script type="module" src="order.js"></script>
+    <script src="order.js"></script>
 </body>
 
 </html>
