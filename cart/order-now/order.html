@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="order.css" />
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -17,10 +17,14 @@
 
     <!-- <form method="post"> -->
     <input class=" inputFields" id="name" type="text" placeholder="Enter your name" />
+    <br />
     <input class="inputFields" id="email" type="email" placeholder="Enter your email" />
+    <br />
     <input class="inputFields" id="phoneNo" type="text" placeholder="Enter your phone number" maxlength="11" />
-    <input class="inputFields" id="phoneNo" type="text" placeholder="Enter your location" maxlength="11" />
-    <button onclick="pickCurrentLocation()">pick current location</button>
+    <br />
+    <input class="inputFields" id="location" type="text" placeholder="Enter your location" maxlength="120" />
+    <button id="pick_location_btn" onclick="pickCurrentLocation()"><i class="fa fa-map-marker" aria-hidden="true"></i></button>
+    <br />
     <button class="order_now_btn" onclick="setOrder()">Order Now</button>
     <!-- </form> -->
 

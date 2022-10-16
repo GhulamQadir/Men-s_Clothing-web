@@ -2,8 +2,7 @@
     height: 27px;
     width: 250px;
     margin-top: 10px;
-    display: block;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .order_now_btn {
@@ -13,4 +12,51 @@
     color: white;
     background-color: purple;
     border: none;
+}
+
+#pick_location_btn {
+    padding: 5px 10px 5px 10px;
+    background-color: purple;
+    color: white;
+    font-size: 18px;
+}
+
+
+
+/* LOADER */
+/*             LOADER STYLING              */
+#loader {
+    /* position: relative; */
+    transform: translate(0, -50%);
+    position: absolute;
+    border: 4px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 4px solid #3498db;
+    width: 15px;
+    height: 15px;
+    -webkit-animation: spin 2s linear infinite;
+    /* Safari */
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
