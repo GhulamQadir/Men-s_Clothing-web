@@ -59,10 +59,15 @@ addToCart = (e) => {
     }
     if (productMatched === false) {
         cart.push(product)
+        productsQuantity.innerHTML = cart.length
         localStorage.setItem("cart", JSON.stringify(cart))
     }
 
 }
+
+
+
+let productsQuantity = document.getElementById('cart_quantity')
 
 
 getCartProducts = () => {
@@ -71,5 +76,6 @@ getCartProducts = () => {
     if (!cart) {
         cart = []
     }
+    productsQuantity.innerHTML = cart.length
 }
 getCartProducts()

@@ -14,3 +14,12 @@ function carousel() {
 }
 
 
+let productsQuantity = document.getElementById('cart_quantity')
+
+getCart = () => {
+    let a = JSON.parse(localStorage.getItem('cart'))
+    console.log(a.length)
+
+    productsQuantity.innerHTML = a.length
+}
+getCart()

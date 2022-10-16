@@ -225,3 +225,9 @@ p {
     background-color: grey;
     color: white;
 }
+
+
+#cart_quantity {
+    position: absolute;
+    top: 26px;
+}
