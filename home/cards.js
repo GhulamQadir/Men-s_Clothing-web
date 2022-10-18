@@ -39,7 +39,7 @@ let cardsData = [{
 ]
 
 for (let i = 0; i < cardsData.length; i++) {
-    cardsMainDiv.innerHTML += `<div onclick="viewDetails(this)" class="card">
+    cardsMainDiv.innerHTML += `<div onmouseover="changeImg(this)" onmouseout="previousImg(this)" onclick="viewDetails(this)" class="card">
     <div class="view_details_div">
     <button id="viewDetailsBtnStyling" onclick="viewDetailsBtnStyling()" class="view_details_btn">View Details</button>
     </div>
@@ -50,8 +50,29 @@ for (let i = 0; i < cardsData.length; i++) {
 </div>`
 }
 
+changeImg = (e) => {
+    let name = e.childNodes[5].innerHTML
 
-function viewDetails(e) {
+    for (var i = 0; i < cardsData.length; i++) {
+        if (cardsData[i].name === name) {
+            e.childNodes[3].src = cardsData[i].image2
+        }
+    }
+}
+
+
+previousImg = (e) => {
+    let name = e.childNodes[5].innerHTML
+
+    for (var i = 0; i < cardsData.length; i++) {
+        if (cardsData[i].name === name) {
+            e.childNodes[3].src = cardsData[i].image
+        }
+    }
+}
+
+
+viewDetails = (e) => {
     e.className += " cardOnclickTransition"
     setTimeout(() => {
         let name = e.childNodes[5].innerHTML
