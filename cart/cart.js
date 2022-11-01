@@ -1,4 +1,5 @@
 let cartMainDiv = document.getElementById('cart_main_div')
+let productsQuantity = document.getElementById('cart_quantity')
 
 
 
@@ -7,8 +8,19 @@ console.log("cartProducts=>>", cartProducts)
 
 
 renderProductsOnCart = () => {
-    for (let i = 0; i < cartProducts.length; i++) {
-        cartMainDiv.innerHTML += `<div class="product">
+    if (cartProducts.length < 1) {
+        cartMainDiv.innerHTML = `Cart is empty`
+
+    }
+
+    else {
+        cartMainDiv.innerHTML = `
+        <div id="productDiv">Product</div>
+        <div id="quantityDiv">Quantity</div>
+        <div id="subTotalDiv">Subtotal</div>`
+
+        for (let i = 0; i < cartProducts.length; i++) {
+            cartMainDiv.innerHTML += `<div class="product">
         <img class="prod-img" src="${cartProducts[i].image}" />        
         <p class="prod-name">${cartProducts[i].name}</p>
         <p class="prod-price">RS: ${cartProducts[i].price}</p>
@@ -19,6 +31,7 @@ renderProductsOnCart = () => {
         <a href="order-now/order.html"><button class="order_btn">Order Now</button></a>
         <span id="sub_total">SubTotal: <span>${cartProducts[i].subTotal}</span></span>
         </div>`
+        }
     }
 }
 renderProductsOnCart()
@@ -44,6 +57,9 @@ increaseQuanity = (e) => {
 }
 
 decreaseQuanity = (e) => {
+
+    console.log(e.parentNode.parentNode)
+
     let initialValue = parseInt(e.parentNode.childNodes[7].childNodes[1].innerHTML)
 
 
@@ -66,12 +82,13 @@ decreaseQuanity = (e) => {
             }
             if (cartProducts[i].quantity === 0) {
                 cartProducts.splice(i, 1)
+                productsQuantity.innerHTML = cartProducts.length
             }
+
         }
     }
     localStorage.setItem("cart", JSON.stringify(cartProducts))
     getTotalAmount()
-
 }
 
 
@@ -95,3 +112,16 @@ getTotalAmount()
 
 
 
+
+
+
+
+getCartProducts = () => {
+    let products = JSON.parse(localStorage.getItem('cart'))
+    cart = products
+    if (!cart) {
+        cart = []
+    }
+    productsQuantity.innerHTML = cart.length
+}
+getCartProducts()

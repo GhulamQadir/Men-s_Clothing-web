@@ -2,9 +2,36 @@
     font-family: sans-serif;
 }
 
+.product {
+    width: 100%;
+}
+
+#cart_main_div {
+    padding: 20px;
+    background-color: azure;
+}
+
+.product-details {
+    width: 50%;
+}
+
+.prod-quanity {
+    width: 20%;
+}
+
+.prod-subtotal {
+    width: 20%;
+}
+
 .prod-img {
     height: 150px;
     width: 200px;
+    display: inline;
+    vertical-align: middle;
+}
+
+.prod-quanity {
+    display: inline;
 }
 
 .prod-name {
@@ -14,6 +41,7 @@
 
 .prod-price {
     font-weight: 550;
+    display: inline;
 }
 
 .product {
@@ -34,4 +62,20 @@
     background-color: purple;
     font-size: 17px;
     border: none;
+}
+
+
+#myDiv {
+    width: 100%;
+    border: 2px solid grey;
+}
+
+
+#cart_main_div {
+    display: flex;
+}
+
+#cart_main_div>div {
+    width: 20% !important;
+    margin: 10px;
 }
