@@ -75,7 +75,26 @@
     display: flex;
 }
 
-#cart_main_div>div {
-    width: 20% !important;
-    margin: 10px;
+#productDiv,
+#quantityDiv,
+#totalDiv,
+#subTotalDiv {
+    width: 30%;
+    padding: 30px;
+}
+
+.prodImg {
+    width: 140px;
+    height: 80px;
+    display: block;
+    margin-top: 30px;
+}
+
+.prodQuant,
+.prodSubTotal,
+.prodTotal {
+    font-size: 20px;
+    display: block;
+    margin-top: 50px;
+    margin-bottom: 90px;
 }
