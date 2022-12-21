@@ -65,9 +65,10 @@ renderProductsOnCart = () => {
 
             let prodQuant = document.createElement('span')
             let btn = document.createElement('button')
+            btn.setAttribute('onclick', "increaseQuanity(this)")
             let btnText = document.createTextNode('+')
             btn.appendChild(btnText)
-            prodQuant
+            prodQuant.appendChild(btn)
             let prodQuantText = document.createTextNode(cartProducts[i].quantity)
             prodQuant.setAttribute('class', 'prodQuant')
             prodQuant.appendChild(prodQuantText)
