@@ -1,9 +1,28 @@
 let cartMainDiv = document.getElementById('cart_main_div')
 let productsQuantity = document.getElementById('cart_quantity')
-var getTotal = 0;
-
+let total;
 let cartProducts = JSON.parse(localStorage.getItem('cart'))
 console.log("cartProducts=>>", cartProducts)
+
+
+
+
+getTotalAmount = () => {
+    let amountsData = [0]
+    let totalAmount = document.getElementById('total_amount')
+    for (let i = 0; i < cartProducts.length; i++) {
+        amountsData.push(cartProducts[i].price * cartProducts[i].quantity)
+    }
+
+    total = amountsData.reduce((total, currentVal) => {
+        return total += currentVal
+    })
+
+
+    totalAmount.innerHTML = `Total: ${total}`
+}
+
+getTotalAmount()
 
 renderProductsOnCart = () => {
     if (cartProducts.length < 1) {
@@ -45,6 +64,10 @@ renderProductsOnCart = () => {
             prodDiv.appendChild(prodImg)
 
             let prodQuant = document.createElement('span')
+            let btn = document.createElement('button')
+            let btnText = document.createTextNode('+')
+            btn.appendChild(btnText)
+            prodQuant
             let prodQuantText = document.createTextNode(cartProducts[i].quantity)
             prodQuant.setAttribute('class', 'prodQuant')
             prodQuant.appendChild(prodQuantText)
@@ -58,7 +81,7 @@ renderProductsOnCart = () => {
             subTotalDiv.appendChild(prodSubTotal)
 
             let prodTotal = document.createElement('span')
-            let prodTotalText = document.createTextNode(`${getTotal}`)
+            let prodTotalText = document.createTextNode(total)
             prodTotal.setAttribute('class', 'prodTotal')
             prodTotal.appendChild(prodTotalText)
             totalDiv.appendChild(prodTotal)
@@ -137,26 +160,6 @@ decreaseQuanity = (e) => {
     getTotalAmount()
 }
 
-
-getTotalAmount = () => {
-    let amountsData = [0]
-    let totalAmount = document.getElementById('total_amount')
-    for (let i = 0; i < cartProducts.length; i++) {
-        amountsData.push(cartProducts[i].price * cartProducts[i].quantity)
-    }
-
-    let total = amountsData.reduce((total, currentVal) => {
-        return total += currentVal
-    })
-
-
-    totalAmount.innerHTML = `Total: ${total}`
-    getTotal = total
-    console.log("totalll=>", getTotal)
-    console.log(total)
-}
-
-getTotalAmount()
 
 
 
