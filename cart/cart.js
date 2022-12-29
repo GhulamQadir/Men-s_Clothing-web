@@ -42,15 +42,6 @@ renderProductsOnCart = () => {
     else {
         for (let i = 0; i < cartProducts.length; i++) {
 
-            //             cartMainDiv.innerHTML += `
-            //             <p class="prod-price">RS: ${cartProducts[i].price}</p>
-            //             <p>Quantity: <span>${cartProducts[i].quantity}<span></p>
-            //             <button onclick="increaseQuanity(this)" class="increase_btn">+</button>
-            //             <button onclick="decreaseQuanity(this)" class="decrease_btn">-</button>
-            //             <br />
-            //             <a href="order-now/order.html"><button class="order_btn">Order Now</button></a>
-            //             <span id="sub_total">SubTotal: <span>${cartProducts[i].subTotal}</span></span>
-            // `
             cartMainDiv.innerHTML += `
             <div>
             <div class="product">
@@ -73,9 +64,15 @@ renderProductsOnCart = () => {
             </div>
             </div>
             <hr>
-            </div>
-            `
+            </div>`
+
         }
+        cartMainDiv.innerHTML += `<div id="order_portion">
+        <button>Order Now</button>
+        <div id="total_div">
+        <span>Total</span>
+        <span>${total}</span>
+        </div>`
     }
 }
 renderProductsOnCart()
@@ -86,14 +83,12 @@ increaseQuanity = (e) => {
 
 
     let productForIncrease = e.parentNode.parentNode.childNodes[3].childNodes[1].innerHTML
-    console.log(productForIncrease)
     for (let i = 0; i < cartProducts.length; i++) {
         if (cartProducts[i].name === productForIncrease) {
             cartProducts[i].quantity += 1
 
             cartProducts[i].subTotal = cartProducts[i].price * cartProducts[i].quantity
             e.parentNode.parentNode.childNodes[7].childNodes[1].innerHTML = cartProducts[i].price * cartProducts[i].quantity
-
             localStorage.setItem("cart", JSON.stringify(cartProducts))
 
         }
