@@ -25,99 +25,74 @@ getTotalAmount = () => {
 getTotalAmount()
 
 renderProductsOnCart = () => {
+
+    cartMainDiv.innerHTML += `
+    <div id="mainDiv">
+        <div id="productDiv">Product</div>
+        <div id="quantityDiv">Quantity</div>
+        <div id="subtotalDiv">Subtotal</div>
+        </div>`
+
+
     if (cartProducts.length < 1) {
         cartMainDiv.innerHTML = `CART IS EMPTY`
 
     }
 
     else {
-        let prodDiv = document.createElement('div')
-        let prodText = document.createTextNode('Product')
-        prodDiv.appendChild(prodText)
-        prodDiv.setAttribute('id', 'productDiv')
-        cartMainDiv.appendChild(prodDiv)
-
-        let quantDiv = document.createElement('div')
-        let quantText = document.createTextNode('Quantity')
-        quantDiv.appendChild(quantText)
-        quantDiv.setAttribute('id', 'quantityDiv')
-        cartMainDiv.appendChild(quantDiv)
-
-        let subTotalDiv = document.createElement('div')
-        let subTotalText = document.createTextNode('Subtotal')
-        subTotalDiv.appendChild(subTotalText)
-        subTotalDiv.setAttribute('id', 'subTotalDiv')
-        cartMainDiv.appendChild(subTotalDiv)
-
-        let totalDiv = document.createElement('div')
-        let totalText = document.createTextNode('Total')
-        totalDiv.appendChild(totalText)
-        totalDiv.setAttribute('id', 'totalDiv')
-        cartMainDiv.appendChild(totalDiv)
-
-
         for (let i = 0; i < cartProducts.length; i++) {
 
-            let prodImg = document.createElement('img')
-            prodImg.src = cartProducts[i].image
-            prodImg.setAttribute('class', 'prodImg')
-            prodDiv.appendChild(prodImg)
-
-            let prodQuant = document.createElement('span')
-            let btn = document.createElement('button')
-            btn.setAttribute('onclick', "increaseQuanity(this)")
-            let btnText = document.createTextNode('+')
-            btn.appendChild(btnText)
-            prodQuant.appendChild(btn)
-            let prodQuantText = document.createTextNode(cartProducts[i].quantity)
-            prodQuant.setAttribute('class', 'prodQuant')
-            prodQuant.appendChild(prodQuantText)
-            quantDiv.appendChild(prodQuant)
-
-
-            let prodSubTotal = document.createElement('span')
-            let prodSubTotalText = document.createTextNode(cartProducts[i].subTotal)
-            prodSubTotal.setAttribute('class', 'prodSubTotal')
-            prodSubTotal.appendChild(prodSubTotalText)
-            subTotalDiv.appendChild(prodSubTotal)
-
-            let prodTotal = document.createElement('span')
-            let prodTotalText = document.createTextNode(total)
-            prodTotal.setAttribute('class', 'prodTotal')
-            prodTotal.appendChild(prodTotalText)
-            totalDiv.appendChild(prodTotal)
-
+            //             cartMainDiv.innerHTML += `
+            //             <p class="prod-price">RS: ${cartProducts[i].price}</p>
+            //             <p>Quantity: <span>${cartProducts[i].quantity}<span></p>
+            //             <button onclick="increaseQuanity(this)" class="increase_btn">+</button>
+            //             <button onclick="decreaseQuanity(this)" class="decrease_btn">-</button>
+            //             <br />
+            //             <a href="order-now/order.html"><button class="order_btn">Order Now</button></a>
+            //             <span id="sub_total">SubTotal: <span>${cartProducts[i].subTotal}</span></span>
+            // `
+            cartMainDiv.innerHTML += `
+            <div>
+            <div class="product">
+            <div class="productImage">
+            <img class="prod-img" src="${cartProducts[i].image}" />        
+            </div>
+            <div class="productName">
+            <p class="prod-name">${cartProducts[i].name}</p>
+            </div>
+            <div class="productQuantity">
+            <button onclick="increaseQuanity(this)" class="increase_btn">+</button>
+            <span>${cartProducts[i].quantity}</span>
+            <button onclick="decreaseQuanity(this)" class="decrease_btn">-</button>
+            </div>
+            <div class="productSubTotal">
+            <span>${cartProducts[i].subTotal}</span>
+            </div>
+            <div>
+            <button class="deleteProdBtn" onclick="deleteProduct(this)"><i class="fa-solid fa-trash"></i></button>
+            </div>
+            </div>
+            <hr>
+            </div>
+            `
         }
-        //     for (let i = 0; i < cartProducts.length; i++) {
-
-        //         cartMainDiv.innerHTML += `<div class="product">
-        //     <img class="prod-img" src="${cartProducts[i].image}" />        
-        //     <p class="prod-name">${cartProducts[i].name}</p>
-        //     <p class="prod-price">RS: ${cartProducts[i].price}</p>
-        //     <p>Quantity: <span>${cartProducts[i].quantity}<span></p>
-        //     <button onclick="increaseQuanity(this)" class="increase_btn">+</button>
-        //     <button onclick="decreaseQuanity(this)" class="decrease_btn">-</button>
-        //     <br />
-        //     <a href="order-now/order.html"><button class="order_btn">Order Now</button></a>
-        //     <span id="sub_total">SubTotal: <span>${cartProducts[i].subTotal}</span></span>
-        //     </div>`
-        //     }
     }
 }
 renderProductsOnCart()
 
 increaseQuanity = (e) => {
-    let initialValue = parseInt(e.parentNode.childNodes[7].childNodes[1].innerHTML)
-    e.parentNode.childNodes[7].childNodes[1].innerHTML = initialValue + 1
+    let initialValue = parseInt(e.parentNode.childNodes[3].innerHTML)
+    e.parentNode.childNodes[3].innerHTML = initialValue + 1
 
 
-    let productForIncrease = e.parentNode.childNodes[3].innerHTML
+    let productForIncrease = e.parentNode.parentNode.childNodes[3].childNodes[1].innerHTML
+    console.log(productForIncrease)
     for (let i = 0; i < cartProducts.length; i++) {
         if (cartProducts[i].name === productForIncrease) {
             cartProducts[i].quantity += 1
 
             cartProducts[i].subTotal = cartProducts[i].price * cartProducts[i].quantity
-            e.parentNode.childNodes[17].childNodes[1].innerHTML = cartProducts[i].price * cartProducts[i].quantity
+            e.parentNode.parentNode.childNodes[7].childNodes[1].innerHTML = cartProducts[i].price * cartProducts[i].quantity
 
             localStorage.setItem("cart", JSON.stringify(cartProducts))
 
@@ -127,25 +102,24 @@ increaseQuanity = (e) => {
 }
 
 decreaseQuanity = (e) => {
-    let initialValue = parseInt(e.parentNode.childNodes[7].childNodes[1].innerHTML)
+    let initialValue = parseInt(e.parentNode.childNodes[3].innerHTML)
 
 
     if (initialValue > 0) {
-        e.parentNode.childNodes[7].childNodes[1].innerHTML = initialValue - 1
+        e.parentNode.childNodes[3].innerHTML = initialValue - 1
         console.log(e.parentNode)
     }
     if (initialValue === 1) {
-        e.parentNode.remove()
+        e.parentNode.parentNode.parentNode.remove()
     }
 
-    let productForDecrease = e.parentNode.childNodes[3].innerHTML
+    let productForDecrease = e.parentNode.parentNode.childNodes[3].childNodes[1].innerHTML
     for (let i = 0; i < cartProducts.length; i++) {
         if (cartProducts[i].name === productForDecrease) {
             if (cartProducts[i].quantity > 0) {
                 cartProducts[i].quantity -= 1
                 cartProducts[i].subTotal = cartProducts[i].price * cartProducts[i].quantity
-                e.parentNode.childNodes[17].childNodes[1].innerHTML = cartProducts[i].price * cartProducts[i].quantity
-
+                e.parentNode.parentNode.childNodes[7].childNodes[1].innerHTML = cartProducts[i].price * cartProducts[i].quantity
             }
             if (cartProducts[i].quantity === 0) {
                 cartProducts.splice(i, 1)
@@ -163,7 +137,23 @@ decreaseQuanity = (e) => {
 
 
 
+deleteProduct = (e) => {
+    let productName = e.parentNode.parentNode.childNodes[3].childNodes[1].innerHTML
 
+
+    for (let i = 0; i < cartProducts.length; i++) {
+        if (cartProducts[i].name === productName) {
+            cartProducts.splice(i, 1)
+            e.parentNode.parentNode.parentNode.remove()
+        }
+        if (cartProducts.length === 0) {
+            cartMainDiv.innerHTML = "CART IS EMPTY"
+        }
+    }
+    localStorage.setItem("cart", JSON.stringify(cartProducts))
+    getTotalAmount()
+
+}
 
 
 
