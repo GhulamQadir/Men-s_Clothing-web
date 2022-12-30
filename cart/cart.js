@@ -8,18 +8,19 @@ console.log("cartProducts=>>", cartProducts)
 
 
 getTotalAmount = () => {
-    let amountsData = [0]
-    let totalAmount = document.getElementById('total_amount')
-    for (let i = 0; i < cartProducts.length; i++) {
-        amountsData.push(cartProducts[i].price * cartProducts[i].quantity)
+    if (cartProducts.length > 0) {
+        let amountsData = [0]
+        let totalAmount = document.getElementById('total')
+        for (let i = 0; i < cartProducts.length; i++) {
+            amountsData.push(cartProducts[i].price * cartProducts[i].quantity)
+        }
+
+        total = amountsData.reduce((total, currentVal) => {
+            return total += currentVal
+        })
+
+        totalAmount.innerHTML = total
     }
-
-    total = amountsData.reduce((total, currentVal) => {
-        return total += currentVal
-    })
-
-
-    totalAmount.innerHTML = `Total: ${total}`
 }
 
 getTotalAmount()
@@ -65,14 +66,12 @@ renderProductsOnCart = () => {
             </div>
             <hr>
             </div>`
-
         }
-        cartMainDiv.innerHTML += `<div id="order_portion">
-        <button>Order Now</button>
-        <div id="total_div">
-        <span>Total</span>
-        <span>${total}</span>
-        </div>`
+        if (cartProducts.length > 0) {
+            let orderPortion = document.getElementById('order_portion')
+            orderPortion.style.display = "block"
+        }
+
     }
 }
 renderProductsOnCart()
@@ -89,6 +88,7 @@ increaseQuanity = (e) => {
 
             cartProducts[i].subTotal = cartProducts[i].price * cartProducts[i].quantity
             e.parentNode.parentNode.childNodes[7].childNodes[1].innerHTML = cartProducts[i].price * cartProducts[i].quantity
+
             localStorage.setItem("cart", JSON.stringify(cartProducts))
 
         }

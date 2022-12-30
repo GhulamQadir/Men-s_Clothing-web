@@ -10,6 +10,8 @@
     background-color: white;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 4px 15px 0 rgba(0, 0, 0, 0.19);
     margin: 10%;
+    position: relative;
+    padding-bottom: 70px;
 }
 
 #mainDiv {
@@ -19,6 +21,7 @@
 .product {
     display: flex;
     padding: 10px;
+    height: 150px;
 }
 
 .productImage {
@@ -62,6 +65,16 @@
     font-size: 16px;
 }
 
+
+
 #order_portion {
-    margin-top: 50px;
+    display: none;
+    position: absolute;
+    bottom: 10px;
 }
+
+#total_div {
+    display: inline-block;
+}
+
+#totalAmount {}
