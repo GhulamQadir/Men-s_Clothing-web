@@ -1,80 +1,111 @@
-* {
-    font-family: sans-serif;
-    margin: 0;
-}
+    * {
+        font-family: sans-serif;
+        margin: 0;
+    }
 
 
 
-#cart_main_div {
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 4px 15px 0 rgba(0, 0, 0, 0.19);
-    margin: 10%;
-    position: relative;
-    padding-bottom: 70px;
-}
+    #cart_main_div {
+        padding: 20px;
+        background-color: white;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 4px 15px 0 rgba(0, 0, 0, 0.19);
+        position: relative;
+        padding-bottom: 70px;
+        justify-content: center;
+        width: 75%;
+        margin: auto;
+        margin-top: 10%;
+    }
 
-#mainDiv {
-    display: flex;
-}
+    @media screen and (max-width: 1030px) {
+        #cart_main_div {
+            width: 90%;
 
-.product {
-    display: flex;
-    padding: 10px;
-    height: 150px;
-}
-
-.productImage {
-    width: 26%;
-}
-
-.productName {
-    width: 26%;
-}
-
-.productQuantity {
-    width: 26%;
-}
-
-.productSubTotal {
-    width: 10%;
-}
-
-.prod-img {
-    height: 150px;
-    width: 200px;
-    display: inline;
-    vertical-align: middle;
-}
+        }
+    }
 
 
-#productDiv {
-    width: 45%;
-    padding: 30px 30px 30px 110px;
-}
+    #mainDiv {
+        display: flex;
+    }
 
-#quantityDiv,
-#subtotalDiv {
-    width: 24%;
-    padding: 30px;
-}
+    .product {
+        display: flex;
+        padding: 10px;
+        height: 115px;
+    }
 
-.deleteProdBtn {
-    background: none;
-    border: none;
-    font-size: 16px;
-}
+    .productImage {
+        width: 100%;
+    }
+
+    .prod-img {
+        height: 90px;
+        width: 150px;
+        display: inline;
+        vertical-align: middle;
+        padding-right: 20px;
+    }
+
+
+    .productName {
+        width: 34%;
+        display: inline-block;
+        margin: 0px;
+    }
+
+    .productQuantity {
+        width: 23.7%;
+        display: inline-block;
+        padding-left: 30px;
+    }
+
+    .productSubTotal {
+        width: 17%;
+        display: inline-block;
+        padding-left: 30px;
+    }
 
 
 
-#order_portion {
-    display: none;
-    position: absolute;
-    bottom: 10px;
-}
+    #productDiv {
+        width: 39.5%;
+        padding-top: 30px;
+        padding-left: 180px;
+    }
 
-#total_div {
-    display: inline-block;
-}
+    #quantityDiv {
+        width: 24%;
+        padding: 30px;
+    }
 
-#totalAmount {}
+    #subtotalDiv {
+        width: 22.3%;
+        padding: 30px;
+    }
+
+    .deleteProdDiv {
+        display: inline-block;
+        margin-left: 10px;
+    }
+
+    .deleteProdBtn {
+        background: none;
+        border: none;
+        font-size: 16px;
+    }
+
+
+
+    #order_portion {
+        display: none;
+        position: absolute;
+        bottom: 10px;
+        width: 95%;
+    }
+
+    #total_div {
+        /* display: inline-block; */
+        float: right;
+        align-items: right;
+    }

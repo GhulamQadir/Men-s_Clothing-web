@@ -9,9 +9,15 @@ body {
     margin-bottom: 20px;
 }
 
+/* 
 p {
     margin: 0;
     padding: 0;
+} */
+
+.fa-shopping-cart {
+    font-weight: bold;
+    font-size: 25px !important;
 }
 
 .imgBox {
@@ -230,4 +236,5 @@ p {
 #cart_quantity {
     position: absolute;
     top: 26px;
+    font-weight: 600;
 }

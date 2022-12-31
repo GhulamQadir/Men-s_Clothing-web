@@ -42,15 +42,16 @@ renderProductsOnCart = () => {
 
     else {
         for (let i = 0; i < cartProducts.length; i++) {
+            //             <div class="productName">
 
             cartMainDiv.innerHTML += `
             <div>
             <div class="product">
             <div class="productImage">
             <img class="prod-img" src="${cartProducts[i].image}" />        
-            </div>
             <div class="productName">
             <p class="prod-name">${cartProducts[i].name}</p>
+            <p class="prod-name">R$ ${cartProducts[i].price}</p>
             </div>
             <div class="productQuantity">
             <button onclick="increaseQuanity(this)" class="increase_btn">+</button>
@@ -58,10 +59,11 @@ renderProductsOnCart = () => {
             <button onclick="decreaseQuanity(this)" class="decrease_btn">-</button>
             </div>
             <div class="productSubTotal">
-            <span>${cartProducts[i].subTotal}</span>
+            <span>R$ ${cartProducts[i].subTotal}</span>
             </div>
-            <div>
+            <div class="deleteProdDiv">
             <button class="deleteProdBtn" onclick="deleteProduct(this)"><i class="fa-solid fa-trash"></i></button>
+            </div>
             </div>
             </div>
             <hr>
@@ -140,6 +142,7 @@ deleteProduct = (e) => {
         if (cartProducts[i].name === productName) {
             cartProducts.splice(i, 1)
             e.parentNode.parentNode.parentNode.remove()
+            productsQuantity.innerHTML = cartProducts.length
         }
         if (cartProducts.length === 0) {
             cartMainDiv.innerHTML = "CART IS EMPTY"
