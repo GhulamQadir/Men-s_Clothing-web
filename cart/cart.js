@@ -19,7 +19,7 @@ getTotalAmount = () => {
             return total += currentVal
         })
 
-        totalAmount.innerHTML = total
+        totalAmount.innerHTML = `R$ ${total}`
     }
 }
 
@@ -29,9 +29,10 @@ renderProductsOnCart = () => {
 
     cartMainDiv.innerHTML += `
     <div id="mainDiv">
-        <div id="productDiv">Product</div>
-        <div id="quantityDiv">Quantity</div>
-        <div id="subtotalDiv">Subtotal</div>
+        <div id="productDiv"><p class="mainHeadings">PRODUCT</p></div>
+        <div id="quantityDiv"><p class="mainHeadings">QUANTITY</p></div>
+        <div id="subtotalDiv"><p class="mainHeadings">SUBTOTAL</p></div>
+        <div id="delete_btn_div"></div>
         </div>`
 
 
@@ -42,7 +43,6 @@ renderProductsOnCart = () => {
 
     else {
         for (let i = 0; i < cartProducts.length; i++) {
-            //             <div class="productName">
 
             cartMainDiv.innerHTML += `
             <div>
@@ -51,15 +51,15 @@ renderProductsOnCart = () => {
             <img class="prod-img" src="${cartProducts[i].image}" />        
             <div class="productName">
             <p class="prod-name">${cartProducts[i].name}</p>
-            <p class="prod-name">R$ ${cartProducts[i].price}</p>
+            <p class="prod-price">R$ ${cartProducts[i].price}</p>
             </div>
             <div class="productQuantity">
-            <button onclick="increaseQuanity(this)" class="increase_btn">+</button>
-            <span>${cartProducts[i].quantity}</span>
             <button onclick="decreaseQuanity(this)" class="decrease_btn">-</button>
+            <div class="prodQuantityDiv">${cartProducts[i].quantity}</div>
+            <button onclick="increaseQuanity(this)" class="increase_btn">+</button>
             </div>
             <div class="productSubTotal">
-            <span>R$ ${cartProducts[i].subTotal}</span>
+            <span class="prod-price">R$ ${cartProducts[i].subTotal}</span>
             </div>
             <div class="deleteProdDiv">
             <button class="deleteProdBtn" onclick="deleteProduct(this)"><i class="fa-solid fa-trash"></i></button>
@@ -89,7 +89,7 @@ increaseQuanity = (e) => {
             cartProducts[i].quantity += 1
 
             cartProducts[i].subTotal = cartProducts[i].price * cartProducts[i].quantity
-            e.parentNode.parentNode.childNodes[7].childNodes[1].innerHTML = cartProducts[i].price * cartProducts[i].quantity
+            e.parentNode.parentNode.childNodes[7].childNodes[1].innerHTML = `R$ ${cartProducts[i].price * cartProducts[i].quantity}`
 
             localStorage.setItem("cart", JSON.stringify(cartProducts))
 
@@ -116,7 +116,7 @@ decreaseQuanity = (e) => {
             if (cartProducts[i].quantity > 0) {
                 cartProducts[i].quantity -= 1
                 cartProducts[i].subTotal = cartProducts[i].price * cartProducts[i].quantity
-                e.parentNode.parentNode.childNodes[7].childNodes[1].innerHTML = cartProducts[i].price * cartProducts[i].quantity
+                e.parentNode.parentNode.childNodes[7].childNodes[1].innerHTML = `R$ ${cartProducts[i].price * cartProducts[i].quantity}`
             }
             if (cartProducts[i].quantity === 0) {
                 cartProducts.splice(i, 1)
