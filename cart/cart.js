@@ -3,7 +3,7 @@ let productsQuantity = document.getElementById('cart_quantity')
 let total;
 let cartProducts = JSON.parse(localStorage.getItem('cart'))
 console.log("cartProducts=>>", cartProducts)
-
+let mainDiv = document.getElementById('mainDiv')
 
 
 
@@ -27,15 +27,6 @@ getTotalAmount()
 
 renderProductsOnCart = () => {
 
-    cartMainDiv.innerHTML += `
-    <div id="mainDiv">
-        <div id="productDiv"><p class="mainHeadings">PRODUCT</p></div>
-        <div id="quantityDiv"><p class="mainHeadings">QUANTITY</p></div>
-        <div id="subtotalDiv"><p class="mainHeadings">SUBTOTAL</p></div>
-        <div id="delete_btn_div"></div>
-        </div>`
-
-
     if (cartProducts.length < 1) {
         cartMainDiv.innerHTML = `CART IS EMPTY`
 
@@ -45,29 +36,28 @@ renderProductsOnCart = () => {
         for (let i = 0; i < cartProducts.length; i++) {
 
             cartMainDiv.innerHTML += `
-            <div>
             <div class="product">
-            <div class="productImage">
+            <div class="productImageDiv">
             <img class="prod-img" src="${cartProducts[i].image}" />        
-            <div class="productName">
+            </div>
+
+            <div class="productNameDiv">
             <p class="prod-name">${cartProducts[i].name}</p>
             <p class="prod-price">R$ ${cartProducts[i].price}</p>
             </div>
-            <div class="productQuantity">
+            <div class="productQuantityDiv">
             <button onclick="decreaseQuanity(this)" class="decrease_btn">-</button>
-            <div class="prodQuantityDiv">${cartProducts[i].quantity}</div>
+            <div class="prodQuantity">${cartProducts[i].quantity}</div>
             <button onclick="increaseQuanity(this)" class="increase_btn">+</button>
             </div>
-            <div class="productSubTotal">
+            <div class="productSubTotalDiv">
             <span class="prod-price">R$ ${cartProducts[i].subTotal}</span>
             </div>
             <div class="deleteProdDiv">
             <button class="deleteProdBtn" onclick="deleteProduct(this)"><i class="fa-solid fa-trash"></i></button>
             </div>
             </div>
-            </div>
-            <hr>
-            </div>`
+            <hr>`
         }
         if (cartProducts.length > 0) {
             let orderPortion = document.getElementById('order_portion')
